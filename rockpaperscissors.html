@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>WebPage</h1>
+    </head> 
+    <body>
+        <script>
+            
+            function promptUser () {
+                let userPrompt = prompt("Rock, Paper, Scissors!");
+                    userInput = userPrompt.toLowerCase();
+                return userInput;
+            }
+
+            function generateRandom () {
+                computerSelection = [Math.floor((Math.random()) * (3))];
+                return computerSelection;
+            }
+
+            function playRound (userInput, computerSelection) {
+                let tie = "There is a tie";
+                    lose = "You lose";
+                    win = "You win";
+
+                switch (userInput) {
+                        case userInput = "rock":
+                            if (computerSelection == 0) {
+                                result = tie;
+                            } else if (computerSelection == 1) {
+                                result = lose;
+                            } else if (computerSelection == 2) {
+                                result = win;
+                            }
+                            break;
+                    
+                        case userInput = "paper":
+                            if (computerSelection == 0) {
+                                result = win;
+                            } else if (computerSelection == 1) {
+                                result = tie;               
+                            } else if (computerSelection == 2) {
+                                result = lose;
+                            }
+                            break;
+
+                        case userInput = "scissors":
+                            if (computerSelection == 0) {
+                                result = lose;
+                            } else if (computerSelection == 1) {
+                                result = win;
+                            } else if (computerSelection == 2) {
+                                result = tie;
+                            }
+                            break;
+                        
+                        default:
+                            console.log("You did not make a valid selection");
+                            break;
+                }
+                return result;
+            }
+
+            function playGame () {
+                for (let i=1; i<=5; i++) {
+                    let items = ['Rock', 'Paper', 'Scissors'];
+                    promptUser()
+                    generateRandom()
+                    playRound(userInput, computerSelection);
+                    console.log(result);
+                    console.log("The computer chose " + items[computerSelection]);
+                }
+            }
+            
+            playGame();
+
+        
+            </script>
+    </body>
+    
